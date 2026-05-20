@@ -1,34 +1,165 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Issuvo
+
+Issuvo is a support ticket management web app built with Next.js, React, Tailwind CSS, MongoDB, and Mongoose. It lets users create, view, update, and delete support tickets while tracking useful ticket details such as category, priority, progress, and status.
+
+## Features
+
+- Dashboard view for browsing support tickets by category
+- Create new support tickets
+- Edit existing ticket details
+- Delete tickets that are no longer needed
+- Track ticket priority from 1 to 5
+- Track ticket progress from 0% to 100%
+- Track ticket status such as Not Started, Started, and Done
+- MongoDB-backed persistence using Mongoose
+- API routes for creating, reading, updating, and deleting tickets
+- Dark themed UI styled with Tailwind CSS
+
+## Tech Stack
+
+- Next.js
+- React
+- Tailwind CSS
+- MongoDB
+- Mongoose
+- Font Awesome
+
+## Project Structure
+
+```txt
+issuvo/
+├── app/
+│   ├── (components)/
+│   │   ├── DeleteBlock.jsx
+│   │   ├── Nav.jsx
+│   │   ├── PriorityDisplay.jsx
+│   │   ├── ProgressDisplay.jsx
+│   │   ├── StatusDisplay.jsx
+│   │   ├── TicketCard.jsx
+│   │   └── TicketForm.jsx
+│   ├── (models)/
+│   │   └── Ticket.js
+│   ├── TicketPage/
+│   │   └── [id]/
+│   │       └── page.jsx
+│   ├── api/
+│   │   └── Tickets/
+│   │       ├── route.js
+│   │       └── [id]/
+│   │           └── route.js
+│   ├── globals.css
+│   ├── layout.js
+│   └── page.jsx
+├── public/
+├── package.json
+├── postcss.config.js
+└── tailwind.config.js
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js
+- npm
+- A MongoDB database connection string
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Hemanth-dev07/issuvo.git
+cd issuvo
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env.local` file in the project root and add your MongoDB connection string:
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the app in your browser:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```txt
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Available Scripts
 
-## Learn More
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Runs the app in development mode.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Builds the app for production.
 
-## Deploy on Vercel
+```bash
+npm run start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Starts the production server after building the app.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+npm run lint
+```
+
+Runs the Next.js lint command.
+
+## Environment Variables
+
+| Variable      | Description                                |
+| ------------- | ------------------------------------------ |
+| `MONGODB_URI` | MongoDB connection string used by Mongoose |
+
+## API Routes
+
+| Method   | Route              | Description                 |
+| -------- | ------------------ | --------------------------- |
+| `GET`    | `/api/Tickets`     | Fetch all tickets           |
+| `POST`   | `/api/Tickets`     | Create a new ticket         |
+| `GET`    | `/api/Tickets/:id` | Fetch a single ticket by ID |
+| `PUT`    | `/api/Tickets/:id` | Update a ticket by ID       |
+| `DELETE` | `/api/Tickets/:id` | Delete a ticket by ID       |
+
+## Ticket Fields
+
+Each ticket stores the following information:
+
+- Title
+- Description
+- Category
+- Priority
+- Progress
+- Status
+- Active state
+- Created and updated timestamps
+
+## Deployment Notes
+
+Before deploying, make sure the production environment has `MONGODB_URI` configured.
+
+Also review any hardcoded `localhost:3000` API fetch URLs and convert them to relative URLs or an environment-based base URL before hosting the app outside your local machine.
+
+## Author
+
+Built by Hemanth.

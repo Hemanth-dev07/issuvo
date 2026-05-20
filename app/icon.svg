@@ -1,0 +1,28 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="64" y1="40" x2="448" y2="472" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2b3441"/>
+      <stop offset="1" stop-color="#18222f"/>
+    </linearGradient>
+    <linearGradient id="ticket" x1="128" y1="120" x2="384" y2="392" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#009fff"/>
+      <stop offset="1" stop-color="#0084d4"/>
+    </linearGradient>
+    <filter id="shadow" x="70" y="80" width="372" height="360" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity="0.30"/>
+    </filter>
+    <mask id="ticketMask">
+      <rect width="512" height="512" fill="black"/>
+      <path d="M130 158C130 139.2 145.2 124 164 124H348C366.8 124 382 139.2 382 158V197C362.1 197 346 213.1 346 233C346 252.9 362.1 269 382 269V354C382 372.8 366.8 388 348 388H164C145.2 388 130 372.8 130 354V269C149.9 269 166 252.9 166 233C166 213.1 149.9 197 130 197V158Z" fill="white"/>
+    </mask>
+  </defs>
+  <rect x="32" y="32" width="448" height="448" rx="112" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="162" fill="#0084d4" opacity="0.12"/>
+  <g filter="url(#shadow)">
+    <path d="M130 158C130 139.2 145.2 124 164 124H348C366.8 124 382 139.2 382 158V197C362.1 197 346 213.1 346 233C346 252.9 362.1 269 382 269V354C382 372.8 366.8 388 348 388H164C145.2 388 130 372.8 130 354V269C149.9 269 166 252.9 166 233C166 213.1 149.9 197 130 197V158Z" fill="url(#ticket)"/>
+  </g>
+  <path d="M232 166H286V344H232V166Z" fill="#f1f3f5"/>
+  <path d="M205 166H313V211H205V166Z" fill="#f1f3f5"/>
+  <path d="M205 299H313V344H205V299Z" fill="#f1f3f5"/>
+  <path d="M305 266L337 298L398 230" stroke="#f1f3f5" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
